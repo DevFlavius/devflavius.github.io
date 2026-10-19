@@ -124,7 +124,7 @@ img { max-width: 100%; display: block; }
 
 .hero-portrait { margin: 2rem auto 0; width: max-content; }
 .portrait {
-  position: relative; width: 9rem; height: 9rem; border-radius: 50%;
+  position: relative; width: clamp(11rem, 30vw, 14rem); height: clamp(11rem, 30vw, 14rem); border-radius: 50%;
   border: 3px solid var(--signal); padding: 5px;
   box-shadow: 0 0 0 8px rgba(255, 178, 36, .08), 0 20px 50px -20px rgba(0, 0, 0, .7);
 }
