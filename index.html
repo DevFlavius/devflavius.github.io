@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flavio Eduardo · Developer</title>
+  <meta name="description" content="Flavio Eduardo: full-stack developer and systems analyst based in Naples, Italy. Automation, integrations and self-hosted infrastructure, built with AI agents.">
+  <meta property="og:title" content="Flavio Eduardo · Developer">
+  <meta property="og:description" content="From industrial mechanic to self-hosted infrastructure. Automation, integrations and software built with AI agents.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://devflavius.github.io/">
+  <meta property="og:image" content="https://devflavius.github.io/assets/avatar.jpg">
+  <meta name="theme-color" content="#16182E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2316182E'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23FFB224'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Tema e idioma antes do primeiro paint, para não piscar.
+    (function () {
+      var d = document.documentElement, t = null, l = null;
+      try { t = localStorage.getItem("theme"); l = localStorage.getItem("lang"); } catch (e) {}
+      if (t) d.setAttribute("data-theme", t);
+      if (!l) l = (navigator.language || "").toLowerCase().indexOf("pt") === 0 ? "pt" : "en";
+      d.setAttribute("data-lang", l);
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+  <header class="bar">
+    <a class="bar-mark" href="#top" aria-label="Flavio Eduardo">
+      <span class="bar-dot" aria-hidden="true"></span>FE<span class="bar-slash">/</span>dev
+    </a>
+    <nav class="bar-nav" aria-label="Sections">
+      <a href="#about"><span>01</span> <b data-i18n="nav.about">About</b></a>
+      <a href="#stack"><span>02</span> <b>Stack</b></a>
+      <a href="#projects"><span>03</span> <b data-i18n="nav.projects">Projects</b></a>
+      <a href="#path"><span>04</span> <b data-i18n="nav.path">Path</b></a>
+      <a href="#offduty"><span>05</span> <b data-i18n="nav.off">Off duty</b></a>
+      <a href="#contact"><span>06</span> <b data-i18n="nav.contact">Contact</b></a>
+    </nav>
+    <div class="bar-tools">
+      <button class="chip-btn" id="lang-toggle" type="button" aria-label="Mudar para português / Switch to English">
+        <span data-on="en">EN</span><span class="sep">·</span><span data-on="pt">PT</span>
+      </button>
+      <button class="chip-btn icon" id="theme-toggle" type="button" aria-label="Toggle light/dark theme">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <p class="live"><span class="live-dot" aria-hidden="true"></span><span data-i18n="hero.live">ONLINE</span> · NAPOLI <time id="clock">--:--</time></p>
+
+      <div class="hero-portrait">
+        <div class="portrait">
+          <img src="assets/avatar.jpg" alt="Flavio Eduardo" width="160" height="160" onerror="this.remove()">
+          <span class="portrait-fallback" aria-hidden="true">FE</span>
+        </div>
+      </div>
+
+      <h1 class="wordmark">
+        <span class="wordmark-pre" data-i18n="hero.pre">The workshop of</span>
+        <span class="wordmark-name" aria-label="Flavio Eduardo"><span class="split">Flavio</span> <span class="split">Eduardo</span></span>
+      </h1>
+
+      <p class="pitch" data-i18n="hero.pitch">
+        <b>Full-stack developer &amp; systems analyst.</b> I started out fixing industrial machines; today I build integrations, automations and self-hosted infrastructure, shipping software with AI agents.
+      </p>
+
+      <div class="hero-cta">
+        <a class="btn btn-signal" href="#contact" data-i18n="hero.cta">Talk to me</a>
+        <a class="btn btn-ghost" href="https://github.com/DevFlavius" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+    <div class="panel console reveal" aria-label="Terminal">
+      <div class="console-head">
+        <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="console-title">flavio@napoli: ~</span>
+      </div>
+      <pre class="console-body" id="console" aria-live="off"></pre>
+    </div>
+
+    <ul class="stats reveal" aria-label="Numbers">
+      <li><b class="count" data-to="2016">2016</b><span data-i18n="stats.since">first line of code</span></li>
+      <li><b class="count" id="age" data-to="23">23</b><span data-i18n="stats.age">years old</span></li>
+      <li><b class="count" data-to="4">4</b><span data-i18n="stats.roles">jobs, from the shop floor to IT</span></li>
+      <li><b class="count" data-to="3">3</b><span data-i18n="stats.langs">languages: PT · EN · IT</span></li>
+    </ul>
+
+    <section class="sec" id="about">
+      <header class="sec-head reveal"><span class="sec-num">01</span><h2 data-i18n="about.title">About</h2></header>
+      <div class="sec-body reveal">
+        <p data-i18n="about.p1">I'm Flavio, a Brazilian developer living in Naples, Italy. I learned game programming in a technical high school (2016–2018), spent a few years working with my hands as an industrial mechanic and IT technician, and came back to code full-time in 2024.</p>
+        <p data-i18n="about.p2">That mix is my edge: I solve problems that cross <b>software</b> (APIs, scraping, databases, CRMs and ERPs) and <b>hardware and networks</b> (Linux servers, Docker, virtualization, IoT). If it can be automated or self-hosted, I want to automate it and self-host it.</p>
+        <p data-i18n="about.p3">I work <b>AI-native</b>: I direct coding agents like Claude Code, and I own what makes software right: the spec, the acceptance criteria and the risk calls.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="stack">
+      <header class="sec-head reveal"><span class="sec-num">02</span><h2>Stack</h2></header>
+      <div class="stack reveal">
+        <div class="stack-group">
+          <h3 data-i18n="stack.lang">Languages</h3>
+          <ul class="tags"><li>TypeScript</li><li>JavaScript / Node.js</li><li>Python</li><li>PHP</li><li>SQL</li><li>HTML / CSS</li><li>C++ (ESP8266)</li></ul>
+        </div>
+        <div class="stack-group">
+          <h3 data-i18n="stack.libs">Frameworks &amp; libraries</h3>
+          <ul class="tags"><li>Prisma</li><li>Express</li><li>Playwright</li></ul>
+        </div>
+        <div class="stack-group">
+          <h3 data-i18n="stack.int">Integrations &amp; automation</h3>
+          <ul class="tags"><li>n8n (custom nodes)</li><li>Vtiger CRM API</li><li>Auvo API</li><li>Omie ERP</li><li>Google Sheets</li></ul>
+        </div>
+        <div class="stack-group">
+          <h3>DevOps &amp; self-hosting</h3>
+          <ul class="tags"><li>Docker / Compose</li><li>Portainer</li><li>Proxmox VE</li><li>Ubuntu Server</li><li>Traefik</li><li>Cloudflare Tunnels</li><li>WireGuard</li></ul>
+        </div>
+        <div class="stack-group">
+          <h3 data-i18n="stack.ai">AI tooling</h3>
+          <ul class="tags"><li>Claude Code</li><li>Cursor</li><li>OpenRouter</li><li>Gemini API</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="projects">
+      <header class="sec-head reveal"><span class="sec-num">03</span><h2 data-i18n="projects.title">Projects</h2></header>
+      <div class="cards">
+        <article class="card reveal">
+          <span class="card-num">03.1</span>
+          <h3>AuvoToVtigerLeads</h3>
+          <p data-i18n="p.auvo">Captures, cleans and syncs leads and field-service data from Auvo into Vtiger CRM, so sales stops copying spreadsheets by hand.</p>
+          <ul class="tags sm"><li>TypeScript</li><li>Node.js</li><li>Playwright</li><li>Prisma</li></ul>
+        </article>
+        <article class="card reveal">
+          <span class="card-num">03.2</span>
+          <h3 data-i18n="p.n8n.t">n8n custom nodes</h3>
+          <p data-i18n="p.n8n">Native n8n nodes for Vtiger CRM and the Auvo API v2, turning one-off scripts into drag-and-drop workflow blocks.</p>
+          <ul class="tags sm"><li>n8n</li><li>TypeScript</li></ul>
+        </article>
+        <article class="card reveal">
+          <span class="card-num">03.3</span>
+          <h3><a href="https://github.com/DevFlavius/purifikar-kanban" target="_blank" rel="noopener">purifikar-kanban ↗</a></h3>
+          <p data-i18n="p.kanban">Internal kanban for day-to-day operations at Purifikar, containerized and self-hosted.</p>
+          <ul class="tags sm"><li>TypeScript</li><li>PHP</li><li>Docker Compose</li></ul>
+        </article>
+        <article class="card reveal">
+          <span class="card-num">03.4</span>
+          <h3 data-i18n="p.iot.t">IoT weather station</h3>
+          <p data-i18n="p.iot">Reads temperature, humidity and pressure and streams them to my home server over MQTT.</p>
+          <ul class="tags sm"><li>ESP8266</li><li>BMP280</li><li>C++</li><li>MQTT</li></ul>
+        </article>
+        <article class="card reveal">
+          <span class="card-num">03.5</span>
+          <h3><a href="https://github.com/DevFlavius/Hotwheels-Scrapping" target="_blank" rel="noopener">Hot Wheels scraper ↗</a></h3>
+          <p data-i18n="p.hw">Scrapes and organizes Hot Wheels catalog data into a digital collection.</p>
+          <ul class="tags sm"><li>Scraping</li><li>Data</li></ul>
+        </article>
+        <article class="card reveal">
+          <span class="card-num">03.6</span>
+          <h3 data-i18n="p.homelab.t">Homelab</h3>
+          <p data-i18n="p.homelab">Proxmox, Docker and Traefik with automatic TLS, exposed through Cloudflare Tunnels to get around Starlink's CGNAT.</p>
+          <ul class="tags sm"><li>Proxmox</li><li>Traefik</li><li>Cloudflare</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="sec" id="path">
+      <header class="sec-head reveal"><span class="sec-num">04</span><h2 data-i18n="path.title">Path</h2></header>
+      <ol class="timeline">
+        <li class="reveal">
+          <span class="tl-when" data-i18n="path.now">Now</span>
+          <h3>AmiticIA</h3>
+          <p class="tl-role" data-i18n="path.ami.r">AI-native product builder</p>
+          <p data-i18n="path.ami">Product and risk owner on software built by AI agents: I define "done", write the acceptance criteria and make the trade-offs.</p>
+        </li>
+        <li class="reveal">
+          <span class="tl-when">Purifikar</span>
+          <h3 data-i18n="path.pfk.r">Systems analyst &amp; developer</h3>
+          <p data-i18n="path.pfk">Internal tools, infrastructure, ERP/CRM integrations, tax setup in Omie and data cleanup for reporting.</p>
+        </li>
+        <li class="reveal">
+          <span class="tl-when">Neo Comunicação Visual</span>
+          <h3 data-i18n="path.neo.r">Production &amp; IT infrastructure tech</h3>
+          <p data-i18n="path.neo">Hybrid role: networks and servers, plus the production line of a visual-communication shop.</p>
+        </li>
+        <li class="reveal">
+          <span class="tl-when">Arteca Têxtil</span>
+          <h3 data-i18n="path.art.r">Industrial mechanic</h3>
+          <p data-i18n="path.art">Machine maintenance and mechanical diagnosis. Where I learned to debug anything.</p>
+        </li>
+        <li class="reveal">
+          <span class="tl-when">2016 – 2018</span>
+          <h3>NAVE / CEJLL</h3>
+          <p data-i18n="path.nave">Technical high school in Digital Game Programming. Now also studying Systems Analysis and Development at Anhanguera.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="sec" id="offduty">
+      <header class="sec-head reveal"><span class="sec-num">05</span><h2 data-i18n="off.title">Off duty</h2></header>
+      <div class="off reveal">
+        <div class="off-item"><span class="off-k" data-i18n="off.k1">Track</span><p data-i18n="off.v1">Karting and engine tuning; classic and sports car meets from Minas Gerais to Pompeii.</p></div>
+        <div class="off-item"><span class="off-k" data-i18n="off.k2">Sim rig</span><p data-i18n="off.v2">BeamNG.drive on a Logitech G29, Minecraft with Create mods, Satisfactory. Automation, even when I play.</p></div>
+        <div class="off-item"><span class="off-k" data-i18n="off.k3">Gym</span><p data-i18n="off.v3">Strength training, focused on hypertrophy.</p></div>
+        <div class="off-item"><span class="off-k" data-i18n="off.k4">Screen</span><p data-i18n="off.v4">Back to the Future, always. Then The Imitation Game, Suits and Friends.</p></div>
+      </div>
+    </section>
+
+    <section class="sec contact" id="contact">
+      <header class="sec-head reveal"><span class="sec-num">06</span><h2 data-i18n="contact.title">Contact</h2></header>
+      <div class="panel contact-panel reveal">
+        <p class="contact-lead" data-i18n="contact.lead">Need an integration, an automation or a server that just works? Send me a message.</p>
+        <div class="hero-cta">
+          <a class="btn btn-signal" id="wa-link" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.8-1.1-4.6-4-4.8-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.6-.1 1.1Z"/></svg>
+            <span data-i18n="contact.wa">Message me on WhatsApp</span>
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/DevFlavius" target="_blank" rel="noopener">github.com/DevFlavius ↗</a>
+        </div>
+        <p class="contact-note" data-i18n="contact.note">Naples, Italy · CET · I reply in Portuguese, English or Italian.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>© <span id="year">2026</span> Flavio Eduardo · <span data-i18n="foot.made">Built with AI agents, hand-checked.</span></p>
+    <p class="foot-dim"><span data-i18n="foot.credit">Design inspired by</span> <a href="https://themakitachronicles.com/" target="_blank" rel="noopener">The M.Akita Chronicles</a>.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
